@@ -89,7 +89,7 @@ h1{font-family:'Kanit',sans-serif;font-size:22px;font-weight:800;color:#0d1b3e;m
     <div class="lf">
       <label>Password</label>
       <input type="password" id="loginPass" placeholder="กรอก password" autocomplete="current-password"
-        onkeydown="if(event.key==='Enter') doLogin()">
+        onkeydown="if(event.key==='Enter') doLogin()"  >
     </div>
     <button class="login-btn" onclick="doLogin()">เข้าสู่ระบบ</button>
   </div>
@@ -148,15 +148,23 @@ h1{font-family:'Kanit',sans-serif;font-size:22px;font-weight:800;color:#0d1b3e;m
 <div class="toast" id="toast"></div>
 
 <script>
-// ── Credentials (เปลี่ยน username/password ได้ที่นี่) ──
-var ADMIN_USER = 'tpaadmin';
-var ADMIN_PASS = 'TPA@2025!';
+// ── Credentials (SHA-256 hashed — ไม่เก็บ password จริง) ──
+var ADMIN_USER_HASH = 'cd743b896b492137ee5c51b46dd864d8d2c88a731a1fc25cc952ef4f24e8ff81';
+var ADMIN_PASS_HASH = '6046a14912e589721d4aa36f9776302435e36294dc994557f48e2faa4ba86ca8';
+var SALT = 'tpa_salt_9x2k';
 var SESSION_KEY = 'tpa_admin_auth';
 
-function doLogin() {
+async function sha256(str) {
+  var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0');}).join('');
+}
+
+async function doLogin() {
   var u = document.getElementById('loginUser').value.trim();
   var p = document.getElementById('loginPass').value;
-  if (u === ADMIN_USER && p === ADMIN_PASS) {
+  var uHash = await sha256(SALT + u);
+  var pHash = await sha256(SALT + p);
+  if (uHash === ADMIN_USER_HASH && pHash === ADMIN_PASS_HASH) {
     sessionStorage.setItem(SESSION_KEY, '1');
     document.getElementById('loginWrap').style.display = 'none';
     document.getElementById('adminWrap').style.display = 'block';
