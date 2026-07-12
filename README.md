@@ -43,3 +43,6 @@ tpa-website/
 - 📞 081-861-6886
 - ✉️ thai-pacific@hotmail.com
 - 📍 999 ม.2 ถ.วิเศษ ราไวย์ ภูเก็ต 83130
+
+ADMIN_USER = 'tpaadmin';
+ADMIN_PASS = 'TPA@2025!';
