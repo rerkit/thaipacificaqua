@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+  var path = window.location.pathname;
+  // Redirect /admin → /admin/index.html
+  if (path === '/admin' || path === '/admin/') {
+    window.location.replace('/admin/index.html');
+  } else {
+    // Other 404 — redirect to home
+    window.location.replace('/');
+  }
+</script>
+</head>
+<body></body>
+</html>
