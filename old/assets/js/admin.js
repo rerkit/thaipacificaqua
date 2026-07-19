@@ -1,51 +1,21 @@
 /* =============================================
    Thai Pacific Aquaculture — Admin JavaScript
+   (admin/index.html only — not loaded on public site)
    ============================================= */
 
 var SK = 'tpa_activities';
-var SK_SEEDED = 'tpa_activities_seeded';
 var data = [];
 var pendImg = null;
 
 var TMAP = { 't-new': '🆕', 't-ev': '📅', 't-st': '✅' };
 var TLTH = { 't-new': 'ใหม่', 't-ev': 'กิจกรรม', 't-st': 'สต็อก' };
-
-var DEFAULT_ACTIVITIES = [
-  { id: 1, tag: 't-st', date: '2025-06-01',
-    th: 'กุ้งขาวแวนนาไม SURE® PL12 พร้อมจำหน่าย', en: 'Whiteleg SURE® PL12 Ready',
-    dth: 'ลูกกุ้ง PL12 ล็อตใหม่ตรวจ PCR แล้ว สต็อกจำนวนมาก ติดต่อได้เลยครับ',
-    den: 'Fresh PCR-cleared PL12 batch available. Large stock. Contact us now.',
-    emoji: '🦐', img: null },
-  { id: 2, tag: 't-ev', date: '2025-05-28',
-    th: 'คณะดูงานจากเวียดนามเยี่ยมชมฟาร์ม', en: 'Vietnamese Delegation Farm Visit',
-    dth: 'ต้อนรับคณะผู้ประกอบการจากเวียดนาม ชมกระบวนการเพาะฟักและห้อง PCR',
-    den: 'Welcomed Vietnamese operators to tour hatchery and PCR laboratory.',
-    emoji: '🎉', img: null },
-  { id: 3, tag: 't-new', date: '2025-05-15',
-    th: 'ต่ออายุใบรับรอง GAP ปี 2568 เรียบร้อยแล้ว', en: 'GAP Certification Renewed 2025',
-    dth: 'ผ่านการตรวจประเมิน GAP โดยกรมประมง ต่อเนื่องเป็นปีที่ 10',
-    den: 'Passed DoF GAP audit for the 10th consecutive year.',
-    emoji: '📜', img: null },
-  { id: 4, tag: 't-ev', date: '2025-05-01',
-    th: 'ต้อนรับคณะเกษตรกรจากสุราษฎร์ธานี', en: 'Surat Thani Farmers Study Visit',
-    dth: 'ต้อนรับคณะเกษตรกร 25 ท่าน ชมฟาร์มและพูดคุยเรื่องสายพันธุ์ SURE®',
-    den: 'Welcomed 25 farmers to tour our farm and discuss SURE® genetics.',
-    emoji: '🌾', img: null }
-];
+var TLEN = { 't-new': 'New', 't-ev': 'Event', 't-st': 'Stock' };
 
 function loadData() {
-  // Seed defaults once so admin can manage all items including defaults
-  if (!localStorage.getItem(SK_SEEDED)) {
-    localStorage.setItem(SK, JSON.stringify(DEFAULT_ACTIVITIES));
-    localStorage.setItem(SK_SEEDED, '1');
-  }
   var s = localStorage.getItem(SK);
   data = s ? JSON.parse(s) : [];
 }
-
-function saveData() {
-  localStorage.setItem(SK, JSON.stringify(data));
-}
+function saveData() { localStorage.setItem(SK, JSON.stringify(data)); }
 
 function fmtDate(s) {
   if (!s) return '';
@@ -66,7 +36,7 @@ function renderAdmin() {
     var row = document.createElement('div');
     row.className = 'act-row';
     row.innerHTML =
-      '<div class="act-row-thumb">' + (a.img ? '<img src="' + a.img + '">' : (a.emoji || '📸')) + '</div>' +
+      '<div class="act-row-thumb">' + (a.img ? '<img src="' + a.img + '">' : '<span>' + (a.emoji || '📸') + '</span>') + '</div>' +
       '<div class="act-row-info">' +
         '<div class="act-row-meta">' +
           '<span class="atag ' + a.tag + '">' + (TMAP[a.tag] || '') + ' ' + (TLTH[a.tag] || '') + '</span>' +
@@ -109,8 +79,7 @@ function addAct() {
     id: Date.now(),
     tag: document.getElementById('aTag').value,
     date: document.getElementById('aDate').value || new Date().toISOString().slice(0, 10),
-    th: tth || ten,
-    en: ten || tth,
+    th: tth || ten, en: ten || tth,
     dth: document.getElementById('aDTh').value,
     den: document.getElementById('aDEn').value,
     emoji: document.getElementById('aEmoji').value || '📸',

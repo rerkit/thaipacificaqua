@@ -59,16 +59,9 @@ var ACTBG = [
   'linear-gradient(135deg,#1a1a0d,#2a2a1a)'
 ];
 
-var SK_SEEDED = 'tpa_activities_seeded';
-
 function loadData() {
-  // Seed defaults into localStorage once — so admin can manage all items including defaults
-  if (!localStorage.getItem(SK_SEEDED)) {
-    localStorage.setItem(SK, JSON.stringify(DEFAULT_ACTIVITIES));
-    localStorage.setItem(SK_SEEDED, '1');
-  }
   var s = localStorage.getItem(SK);
-  data = s ? JSON.parse(s) : [];
+  data = s ? JSON.parse(s) : DEFAULT_ACTIVITIES.slice();
 }
 
 function fmtDate(s) {

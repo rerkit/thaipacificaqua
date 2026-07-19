@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="th" data-lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thai Pacific Aquaculture | ไทยแปซิฟิก อควาคัลเจอร์</title>
+<meta name="description" content="ผู้นำด้านการเพาะเลี้ยงและพัฒนาสายพันธุ์กุ้งขาวแวนนาไมและกุ้งกุลาดำ ภูเก็ต ประเทศไทย">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700;800&family=Kanit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="assets/images/logo.jpg" alt="TPA Logo">
+    <div>
+      <div class="logo-name">THAI <span>PACIFIC</span></div>
+      <div class="logo-sub">Aquaculture · Phuket</div>
+    </div>
+  </div>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#about" class="th">เกี่ยวกับเรา</a><a href="#about" class="en">About</a>
+      <a href="#products" class="th">สินค้า</a><a href="#products" class="en">Products</a>
+      <a href="#sure" class="th">SURE® Shrimp</a><a href="#sure" class="en">SURE® Shrimp</a>
+      <a href="#map" class="th">แผนที่</a><a href="#map" class="en">Location</a>
+      <a href="#contact" class="nav-cta th">📞 ติดต่อ</a>
+      <a href="#contact" class="nav-cta en">📞 Contact</a>
+    </div>
+    <div class="lang-btn">
+      <button id="btn-th" class="active" onclick="setLang('th')">TH</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge"><i></i>
+        <span class="th">ผู้นำด้านพ่อแม่พันธุ์กุ้งไทย · ภูเก็ต</span>
+        <span class="en">Thailand's Premium Shrimp Broodstock · Phuket</span>
+      </div>
+      <h1 class="th"><span class="red">คุณภาพกุ้งไทย</span><br><span class="sky">มาตรฐานสากล</span></h1>
+      <h1 class="en"><span class="red">Thai Shrimp Quality</span><br><span class="sky">World Standard</span></h1>
+      <p class="hero-slogan th">ใส่ใจสิ่งแวดล้อม เพื่อความยั่งยืน</p>
+      <p class="hero-slogan en">Environmental Responsibility for Sustainability</p>
+      <p class="hero-desc th">ไทยแปซิฟิก อควาคัลเจอร์ ผู้นำด้านการเพาะเลี้ยงและพัฒนาสายพันธุ์กุ้งขาวแวนนาไม ด้วยมาตรฐานระดับสากล ประสบการณ์กว่า 40 ปี</p>
+      <p class="hero-desc en">Thai Pacific Aquaculture — leading developer of Whiteleg shrimp broodstock and post-larvae to international standards. 40+ years of hatchery expertise.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-red th">📞 ติดต่อสั่งซื้อ</a>
+        <a href="#contact" class="btn-red en">📞 Order Now</a>
+        <a href="#products" class="btn-outline th">🦐 ดูสินค้า</a>
+        <a href="#products" class="btn-outline en">🦐 Our Products</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-num">40<span>+</span></div><div class="hstat-lbl th">ปีประสบการณ์</div><div class="hstat-lbl en">Yrs Exp.</div></div>
+        <div class="hstat"><div class="hstat-num">14<span>+</span></div><div class="hstat-lbl th">ปีพัฒนาพันธุ์</div><div class="hstat-lbl en">Yrs Breeding</div></div>
+        <div class="hstat"><div class="hstat-num">4.1K</div><div class="hstat-lbl th">ผู้ติดตาม</div><div class="hstat-lbl en">Followers</div></div>
+        <div class="hstat"><div class="hstat-num">SPF</div><div class="hstat-lbl th">ปลอดเชื้อ</div><div class="hstat-lbl en">Pathogen Free</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="feed-box">
+        <div class="feed-hd">
+          <div class="feed-hd-lbl th">📸 กิจกรรมล่าสุดจากฟาร์ม</div>
+          <div class="feed-hd-lbl en">📸 Latest Farm Activities</div>
+          <div class="feed-live"><i></i><span class="th">อัพเดตสด</span><span class="en">Live</span></div>
+        </div>
+        <div class="news-scroll" id="feedEl"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERT STRIP -->
+<div class="cert-strip">
+  <div class="cert-inner">
+    <div class="cert-lbl th">รับรองมาตรฐาน</div>
+    <div class="cert-lbl en">Certifications</div>
+    <div class="cert-logos">
+      <div class="cbadge">🏛️ <span class="th">กรมประมง</span><span class="en">Dept. of Fisheries</span></div>
+      <div class="cbadge">✅ GAP Certified</div>
+      <div class="cbadge">🔬 SPF <span class="th">ปลอดโรค</span><span class="en">Pathogen Free</span></div>
+      <div class="cbadge">🛡️ PCR Tested</div>
+      <div class="cbadge">🌱 <span class="th">ใส่ใจสิ่งแวดล้อม</span><span class="en">Eco Responsible</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="sec-white">
+<div class="si">
+  <div class="reveal">
+    <p class="stag th">เกี่ยวกับเรา</p><p class="stag en">About Us</p>
+    <h2 class="stitle th">ไทยแปซิฟิก อควาคัลเจอร์<br>ผู้นำพัฒนาพันธุ์กุ้งไทย</h2>
+    <h2 class="stitle en">Thai Pacific Aquaculture<br>Thailand's Shrimp Genetics Leader</h2>
+  </div>
+  <div class="about-grid reveal">
+    <div class="about-logo-wrap">
+      <img class="main-logo" src="assets/images/logo.jpg" alt="Thai Pacific Aquaculture Logo">
+      <div class="team-photo">
+        <img src="assets/images/team.png" alt="Thai Pacific Aquaculture Team">
+      </div>
+      <div class="about-sure-badge">
+        <div class="sure-text">SURE®</div>
+        <div class="sure-sub">Shrimp</div>
+      </div>
+    </div>
+    <div class="about-info">
+      <div class="about-quote th">"ถ้าเราไม่มั่นใจ เราไม่ขาย"<br><small style="font-size:14px;font-weight:400;color:var(--muted)">— คุณอำพล สถิตศิลป์, CEO</small></div>
+      <div class="about-quote en">"If we are not sure, we don't sell"<br><small style="font-size:14px;font-weight:400;color:var(--muted)">— Mr. Aumpon Sathitsilp, CEO</small></div>
+      <p class="about-text th">บริษัท ไทยแปซิฟิก อควาคัลเจอร์ จำกัด <b>ผลิตและจำหน่ายนอเพลียสและลูกกุ้งทั้งกุ้งขาวแวนนาไมและกุ้งกุลาดำ</b> ด้วยประสบการณ์กว่า 40 ปีในธุรกิจโรงเพาะฟัก และ 14 ปีในการพัฒนาพ่อแม่พันธุ์</p>
+      <p class="about-text en">Thai Pacific Aquaculture Co., Ltd. <b>produces and distributes Nauplii and Post-larvae of both Whiteleg and Black Tiger shrimp</b>, backed by 40+ years in shrimp hatchery and 14+ years of dedicated broodstock development.</p>
+      <p class="about-text th">เราบันทึกข้อมูลและพัฒนาอย่างต่อเนื่องจาก feedback ของเกษตรกรผู้เลี้ยง เพื่อให้สายพันธุ์ <b>"Thai Pacific SURE®"</b> เหมาะสมที่สุดสำหรับสภาพภูมิอากาศไทยและประเทศเพื่อนบ้าน</p>
+      <p class="about-text en">Through continuous data collection and farmer feedback, our <b>"Thai Pacific SURE®"</b> broodstock is optimized for Thailand and neighboring ASEAN climates.</p>
+      <div class="about-ceo">
+        <div class="ceo-avatar">👨‍💼</div>
+        <div>
+          <div class="ceo-name th">คุณอำพล สถิตศิลป์</div>
+          <div class="ceo-name en">Mr. Aumpon Sathitsilp</div>
+          <div class="ceo-role">CEO · Thai Pacific Aquaculture</div>
+          <div class="ceo-quote th">"ถ้าเราไม่มั่นใจ เราไม่ขาย"</div>
+          <div class="ceo-quote en">"If we are not sure, we don't sell"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="sec-offwhite">
+<div class="si">
+  <div class="reveal">
+    <p class="stag th">หมวดหมู่สินค้า</p><p class="stag en">Our Products</p>
+    <h2 class="stitle th">สินค้าพ่อแม่พันธุ์และลูกกุ้ง<br>คุณภาพระดับสากล</h2>
+    <h2 class="stitle en">Premium Broodstock &<br>Post-Larvae Products</h2>
+    <p class="sdesc th">สายพันธุ์ SURE® ที่พัฒนาเพื่อสภาพอากาศไทยและ ASEAN — โตเร็ว ทนโรค คุ้มค่าการลงทุน</p>
+    <p class="sdesc en">SURE® genetics developed for Thai and ASEAN conditions — fast growth, disease resistance, and cost efficiency.</p>
+  </div>
+  <div class="prod-cats reveal">
+    <div class="pcat active" onclick="filterCat('all',this)"><span class="th">ทั้งหมด</span><span class="en">All</span></div>
+    <div class="pcat" onclick="filterCat('vannamei',this)"><span class="th">กุ้งขาวแวนนาไม</span><span class="en">Whiteleg Shrimp</span></div>
+    <div class="pcat" onclick="filterCat('monodon',this)"><span class="th">กุ้งกุลาดำ</span><span class="en">Black Tiger</span></div>
+  </div>
+  <div class="pgrid reveal">
+    <div class="pcard" data-cat="vannamei monodon">
+      <div class="pimg" style="background:linear-gradient(135deg,#c8e8f8,#8dd4f0)">
+        <div class="pbadge">NAUPLII</div>
+        <span>🔬</span>
+      </div>
+      <div class="pbodyw">
+        <h3 class="th">นอเพลียส (NPL)</h3><h3 class="en">Nauplii (NPL)</h3>
+        <p class="th">ไข่ตัวอ่อนระยะแรก คุณภาพสูง พร้อมเอกสาร PCR รับรองปลอดโรคทุกล็อต</p>
+        <p class="en">High-quality early-stage larvae. PCR-certified pathogen-free with full documentation every batch.</p>
+        <div class="pspecs"><span class="spect">SPF Certified</span><span class="spect">PCR Tested</span></div>
+        <a href="#contact" class="pcta th">สอบถามราคา</a><a href="#contact" class="pcta en">Enquire Price</a>
+      </div>
+    </div>
+    <div class="pcard" data-cat="vannamei">
+      <div class="pimg" style="background:linear-gradient(135deg,#d4f0c8,#a0e090)">
+        <div class="pbadge red">⭐ BEST SELLER</div>
+        <span>🦐</span>
+      </div>
+      <div class="pbodyw">
+        <h3 class="th">กุ้งพี — กุ้งขาวแวนนาไม (PL)</h3><h3 class="en">Whiteleg Post-Larvae (PL)</h3>
+        <p class="th">Litopenaeus vannamei สายพันธุ์ SURE® โตเร็ว ทนโรค ถึง 30 ตัว/100g ใน 90 วัน</p>
+        <p class="en">Litopenaeus vannamei SURE® strain. Reaches 30 counts/100g in 90 days (ADG 0.3–0.45).</p>
+        <div class="pspecs"><span class="spect">PL1–PL15</span><span class="spect">SURE® Strain</span><span class="spect">ADG 0.3–0.45</span><span class="spect">SPF</span></div>
+        <a href="#contact" class="pcta th">สอบถามราคา</a><a href="#contact" class="pcta en">Enquire Price</a>
+      </div>
+    </div>
+    <div class="pcard" data-cat="monodon">
+      <div class="pimg" style="background:linear-gradient(135deg,#2a1208,#5a2a14)">
+        <div class="pbadge">BLACK TIGER</div>
+        <span>🦞</span>
+      </div>
+      <div class="pbodyw">
+        <h3 class="th">กุ้งพี — กุ้งกุลาดำ (PL)</h3><h3 class="en">Black Tiger Post-Larvae (PL)</h3>
+        <p class="th">Penaeus monodon คุณภาพสูง ทนโรค เหมาะน้ำกร่อย ตลาดส่งออกต้องการสูง</p>
+        <p class="en">Penaeus monodon — hardy, disease-resistant, ideal for brackish water culture. High export demand.</p>
+        <div class="pspecs"><span class="spect">P. monodon</span><span class="spect th">ส่งออก</span><span class="spect en">Export Grade</span><span class="spect">PCR Tested</span></div>
+        <a href="#contact" class="pcta th">สอบถามราคา</a><a href="#contact" class="pcta en">Enquire Price</a>
+      </div>
+    </div>
+    <div class="pcard" data-cat="vannamei monodon">
+      <div class="pimg" style="background:linear-gradient(135deg,#1a2d5a,#243870)">
+        <div class="pbadge">BROODSTOCK</div>
+        <span>🏆</span>
+      </div>
+      <div class="pbodyw">
+        <h3 class="th">พ่อแม่พันธุ์ (BROODSTOCK)</h3><h3 class="en">Broodstock</h3>
+        <p class="th">พ่อแม่พันธุ์ SURE® คัดสรรจาก R&D 14+ ปี บันทึก Performance จากฟาร์มจริงทั่วประเทศ</p>
+        <p class="en">SURE® broodstock from 14+ years of R&D, with performance data from grow-out farms nationwide.</p>
+        <div class="pspecs"><span class="spect">SURE® Genetics</span><span class="spect">14+ Yrs R&D</span><span class="spect">SPF</span><span class="spect">PCR</span></div>
+        <a href="#contact" class="pcta th">สอบถามราคา</a><a href="#contact" class="pcta en">Enquire Price</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SURE SECTION -->
+<section id="sure" class="sure-section">
+<div class="sure-inner">
+  <div class="sure-left reveal">
+    <p class="stag">SURE® SHRIMP</p>
+    <h2 class="stitle th">ทำไมต้องเลือก<br>Thai Pacific SURE®?</h2>
+    <h2 class="stitle en">Why Choose<br>Thai Pacific SURE®?</h2>
+    <p class="sdesc th">Fast Growth, Strong Immunity และ Adaptable to ASEAN Climate — คำตอบที่ใช่สำหรับผู้ต้องการกุ้งคุณภาพสูงสุด</p>
+    <p class="sdesc en">Fast Growth, Strong Immunity, and Adaptable to ASEAN Climate — the right answer for those demanding the highest quality shrimp.</p>
+    <div class="sure-features">
+      <div class="sf"><div class="sf-icon">🔬</div><div><div class="sf-title th">SPF — ปลอดเชื้อโรคจำเพาะ</div><div class="sf-title en">Specific Pathogen Free</div><div class="sf-txt">VpAHPND, WSSV, IHHNV, DIV1, BP, MBV, TSV, YHV, IMNV, CMNV, EHP</div></div></div>
+      <div class="sf"><div class="sf-icon">⚡</div><div><div class="sf-title th">โตเร็ว — 30 ตัว/100g ใน 90 วัน</div><div class="sf-title en">Fast Growth — 30 counts in 90 days</div><div class="sf-txt th">ADG เฉลี่ย 0.3–0.45 g/วัน เหมาะการเลี้ยงแบบ intensive</div><div class="sf-txt en">Average ADG 0.3–0.45 g/day, ideal for intensive farming.</div></div></div>
+      <div class="sf"><div class="sf-icon">💰</div><div><div class="sf-title th">คุ้มค่า — อัตราการรอดสูง</div><div class="sf-title en">Cost Efficient — High Survival Rate</div><div class="sf-txt th">Nauplii และ PL คุณภาพสูง อัตราการรอดเป็นเลิศ ลดต้นทุน</div><div class="sf-txt en">Premium Nauplii and PL with excellent survival rates, reducing production costs.</div></div></div>
+    </div>
+  </div>
+  <div class="sure-right reveal">
+    <div class="sure-card"><div class="sure-card-icon">🌍</div><div class="sure-card-title th">รองรับทุกภาษา</div><div class="sure-card-title en">Multilingual Support</div><div class="sure-card-txt th">ทีมงานสื่อสารได้ ไทย · อังกฤษ · เวียดนาม · จีน</div><div class="sure-card-txt en">Our team communicates in Thai, English, Vietnamese, and Chinese.</div></div>
+    <div class="sure-card"><div class="sure-card-icon">📋</div><div class="sure-card-title th">เอกสารรับรองครบถ้วน</div><div class="sure-card-title en">Full Certification</div><div class="sure-card-txt th">ใบรับรองกรมประมง, PCR report ทุกล็อต, Health Certificate</div><div class="sure-card-txt en">DoF certificates, PCR reports every batch, Health Certificates.</div><div class="sure-check"><span class="schk">DoF</span><span class="schk">GAP</span><span class="schk">PCR</span><span class="schk">CoC</span></div></div>
+    <div class="sure-card"><div class="sure-card-icon">🚚</div><div class="sure-card-title th">ส่งทั่วไทยและต่างประเทศ</div><div class="sure-card-title en">Domestic & International</div><div class="sure-card-txt th">ระบบขนส่งควบคุมอุณหภูมิ บรรจุมาตรฐาน ส่งตรงถึงฟาร์ม</div><div class="sure-card-txt en">Temperature-controlled, oxygenated packaging delivered to your farm.</div></div>
+  </div>
+</div>
+</section>
+
+<!-- TRUST -->
+<section id="trust" class="sec-white">
+<div class="si">
+  <div class="reveal">
+    <p class="stag th">ทำไมต้องเลือกเรา</p><p class="stag en">Why Choose Us</p>
+    <h2 class="stitle th">ไว้วางใจได้ทุกขั้นตอน</h2>
+    <h2 class="stitle en">Trusted at Every Step</h2>
+  </div>
+  <div class="tgrid">
+    <div class="tcard reveal"><div class="tico">🔬</div><h3 class="th">ตรวจ PCR ทุกล็อต</h3><h3 class="en">PCR Tested Every Batch</h3><p class="th">ปลอดโรค EMS, WSSV, IHHNV และอีก 10+ โรค รับรองโดยห้องปฏิบัติการมาตรฐาน</p><p class="en">Free of EMS, WSSV, IHHNV and 10+ pathogens, certified by accredited labs.</p></div>
+    <div class="tcard reveal"><div class="tico">📜</div><h3 class="th">ใบรับรองครบถ้วน</h3><h3 class="en">Full Documentation</h3><p class="th">กรมประมง, GAP, CoC พร้อมเอกสารกำกับสินค้าทุกครั้ง</p><p class="en">DoF, GAP, CoC certified with full paperwork every shipment.</p></div>
+    <div class="tcard reveal"><div class="tico">🧬</div><h3 class="th">R&D ต่อเนื่อง 14+ ปี</h3><h3 class="en">14+ Years R&D</h3><p class="th">วิจัยและพัฒนาสายพันธุ์อย่างต่อเนื่อง จากฟาร์มจริงทั่วประเทศ</p><p class="en">Continuous genetic research with real-world data from farms nationwide.</p></div>
+    <div class="tcard reveal"><div class="tico">🌱</div><h3 class="th">ใส่ใจสิ่งแวดล้อม</h3><h3 class="en">Eco Responsible</h3><p class="th">มาตรฐานระดับสากล เพื่อความยั่งยืนของอุตสาหกรรมกุ้งไทย</p><p class="en">International standards for the long-term sustainability of Thailand's shrimp industry.</p></div>
+    <div class="tcard reveal"><div class="tico">📞</div><h3 class="th">บริการหลังการขาย</h3><h3 class="en">After-Sales Support</h3><p class="th">ทีมผู้เชี่ยวชาญ สื่อสารได้ 4 ภาษา ไทย/อังกฤษ/เวียดนาม/จีน</p><p class="en">Expert team in Thai, English, Vietnamese, and Chinese.</p></div>
+    <div class="tcard reveal"><div class="tico">🏆</div><h3 class="th">ประสบการณ์ 40+ ปี</h3><h3 class="en">40+ Years Experience</h3><p class="th">ผู้นำธุรกิจโรงเพาะฟักในภูเก็ต ลูกค้าไว้วางใจทั่วประเทศ</p><p class="en">Phuket's leading hatchery for over 4 decades, trusted nationwide.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- MAP -->
+<section id="map" class="sec-offwhite">
+<div class="si">
+  <div class="reveal">
+    <p class="stag th">ที่ตั้งฟาร์ม</p><p class="stag en">Farm Location</p>
+    <h2 class="stitle th">ฟาร์มของเราตั้งอยู่ที่<br>ราไวย์ ภูเก็ต</h2>
+    <h2 class="stitle en">Our Farm is Located at<br>Rawai, Phuket</h2>
+  </div>
+  <div class="map-grid reveal">
+    <div class="map-info">
+      <h3 class="th">ยินดีต้อนรับทุกท่าน</h3><h3 class="en">Visitors Welcome</h3>
+      <p class="th">นัดหมายเยี่ยมชมฟาร์มได้ทุกวัน ทีมงานยินดีพาชมบ่อเพาะ ระบบ PCR และกระบวนการผลิตทั้งหมด</p>
+      <p class="en">Schedule a farm visit anytime. Our team will guide you through the hatchery, PCR lab, and full production process.</p>
+      <div class="mdetail">
+        <div class="mitem"><div class="micon">📍</div><div class="mtxt"><strong class="th">ที่อยู่</strong><strong class="en">Address</strong><span class="th">999 ม.2 ถนนวิเศษ ต.ราไวย์ อ.เมืองภูเก็ต จ.ภูเก็ต 83130</span><span class="en">999 Moo.2 Viset Rd, Rawai, Muang, Phuket 83130, Thailand</span></div></div>
+        <div class="mitem"><div class="micon">📞</div><div class="mtxt"><strong class="th">โทรศัพท์</strong><strong class="en">Phone</strong>081-861-6886</div></div>
+        <div class="mitem"><div class="micon">✉️</div><div class="mtxt"><strong>Email</strong>thai-pacific@hotmail.com · ceoaqua@hotmail.com</div></div>
+        <div class="mitem"><div class="micon">🕐</div><div class="mtxt"><strong class="th">เวลาทำการ</strong><strong class="en">Hours</strong><span class="th">จันทร์–เสาร์ 07:00–17:00 น.</span><span class="en">Mon–Sat 07:00–17:00</span></div></div>
+      </div>
+      <a href="https://maps.google.com/?q=999+Moo2+Viset+Rawai+Phuket+Thailand" target="_blank" class="map-btn">🗺️ <span class="th">เปิดใน Google Maps</span><span class="en">Open in Google Maps</span></a>
+    </div>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.8!2d98.3017!3d7.7739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x305031048b4d5b33%3A0x5c3b9b5b5b5b5b5b!2sRawai%2C%20Mueang%20Phuket%20District%2C%20Phuket!5e0!3m2!1sth!2sth!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec-white">
+<div class="si">
+  <div class="reveal">
+    <p class="stag th">ติดต่อเรา</p><p class="stag en">Contact Us</p>
+    <h2 class="stitle th">ติดต่อสั่งซื้อได้เลยตอนนี้</h2>
+    <h2 class="stitle en">Get in Touch Right Now</h2>
+    <p class="sdesc th">ทีมงานพร้อมให้คำปรึกษาและเสนอราคา สื่อสารได้ 4 ภาษา ไทย อังกฤษ เวียดนาม จีน</p>
+    <p class="sdesc en">Our team is ready to consult and quote. We communicate in Thai, English, Vietnamese, and Chinese.</p>
+  </div>
+  <div class="cgrid reveal">
+    <div class="cchans">
+      <a href="tel:0818616886" class="ccard"><div class="cico ci-p">📞</div><div><div class="clbl th">โทรศัพท์</div><div class="clbl en">Phone</div><div class="cval">081-861-6886</div><div class="csub th">จ–ส 07:00–17:00 น.</div><div class="csub en">Mon–Sat 07:00–17:00</div></div><div class="carrow">→</div></a>
+      <a href="mailto:thai-pacific@hotmail.com" class="ccard"><div class="cico ci-e">✉️</div><div><div class="clbl">Email</div><div class="cval">thai-pacific@hotmail.com</div><div class="csub">ceoaqua@hotmail.com</div></div><div class="carrow">→</div></a>
+      <a href="https://line.me/ti/p/~thai-pacific" class="ccard"><div class="cico ci-l">💬</div><div><div class="clbl">LINE</div><div class="cval">@thai-pacific</div><div class="csub th">ตอบทันที</div><div class="csub en">Instant Reply</div></div><div class="carrow">→</div></a>
+      <a href="https://www.facebook.com/share/18hQwXpjcr/" target="_blank" class="ccard"><div class="cico ci-f">📘</div><div><div class="clbl">Facebook</div><div class="cval">Thai Pacific Aquaculture</div><div class="csub th">4.1K followers</div><div class="csub en">4.1K followers</div></div><div class="carrow">→</div></a>
+      <a href="https://www.tiktok.com/@thaipacificaquaculture" target="_blank" class="ccard"><div class="cico ci-t">🎵</div><div><div class="clbl">TikTok</div><div class="cval">Thai Pacific Aquaculture</div><div class="csub th">ดูวิดีโอจากฟาร์ม</div><div class="csub en">Watch farm videos</div></div><div class="carrow">→</div></a>
+    </div>
+    <div class="cform">
+      <h3 class="th">ขอใบเสนอราคา</h3><h3 class="en">Request a Quote</h3>
+      <p class="sub th">กรอกข้อมูลเพื่อรับราคาพิเศษจากทีมงานโดยตรง</p>
+      <p class="sub en">Fill in details to receive special pricing from our team directly.</p>
+      <div class="fg"><label class="th">ชื่อ – นามสกุล</label><label class="en">Full Name</label><input type="text" placeholder="Your name"></div>
+      <div class="fg"><label class="th">เบอร์โทรศัพท์</label><label class="en">Phone</label><input type="tel" placeholder="081-xxx-xxxx"></div>
+      <div class="fg">
+        <label class="th">สินค้าที่สนใจ</label><label class="en">Product Interest</label>
+        <select>
+          <option class="th">นอเพลียส (NPL)</option><option class="en">Nauplii (NPL)</option>
+          <option class="th">กุ้งพี (PL) — กุ้งขาวแวนนาไม SURE®</option><option class="en">Post-Larvae (PL) — Whiteleg SURE®</option>
+          <option class="th">กุ้งพี (PL) — กุ้งกุลาดำ</option><option class="en">Post-Larvae (PL) — Black Tiger</option>
+          <option class="th">พ่อแม่พันธุ์ (Broodstock)</option><option class="en">Broodstock</option>
+        </select>
+      </div>
+      <div class="fg"><label class="th">ปริมาณ / ข้อความ</label><label class="en">Quantity / Message</label><textarea placeholder="Details..."></textarea></div>
+      <button class="fsub-btn th" onclick="submitForm('th')">📩 ส่งข้อมูล — รับราคาพิเศษ</button>
+      <button class="fsub-btn en" onclick="submitForm('en')">📩 Submit — Get Special Price</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-name">THAI <span>PACIFIC</span> AQUACULTURE</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.4);letter-spacing:1px;margin-top:2px;">ไทยแปซิฟิก อควาคัลเจอร์</div>
+        <p class="th">ผลิตและจำหน่ายนอเพลียสและลูกกุ้งทั้งกุ้งขาวแวนนาไมและกุ้งกุลาดำ ด้วยมาตรฐานระดับสากล เพื่อความยั่งยืนของอุตสาหกรรมกุ้งไทย</p>
+        <p class="en">Producing and distributing Nauplii and Post-larvae of Whiteleg and Black Tiger shrimp to international standards.</p>
+        <div style="margin-top:14px;font-size:13px;color:rgba(255,255,255,.5);">
+          📍 <span class="th">999 ม.2 ถ.วิเศษ ราไวย์ ภูเก็ต 83130</span><span class="en">999 Moo.2 Viset Rd, Rawai, Phuket 83130</span><br>
+          📞 081-861-6886 &nbsp;·&nbsp; ✉️ thai-pacific@hotmail.com
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="th">สินค้า</h4><h4 class="en">Products</h4>
+        <a href="#products" class="th">นอเพลียส (NPL)</a><a href="#products" class="en">Nauplii (NPL)</a>
+        <a href="#products" class="th">กุ้งพี (PL) แวนนาไม</a><a href="#products" class="en">PL — Whiteleg</a>
+        <a href="#products" class="th">กุ้งพี (PL) กุลาดำ</a><a href="#products" class="en">PL — Black Tiger</a>
+        <a href="#products" class="th">พ่อแม่พันธุ์</a><a href="#products" class="en">Broodstock</a>
+        <a href="#sure">SURE® Shrimp</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="th">ติดต่อ</h4><h4 class="en">Contact</h4>
+        <a href="tel:0818616886">📞 081-861-6886</a>
+        <a href="mailto:thai-pacific@hotmail.com">✉️ thai-pacific@hotmail.com</a>
+        <a href="https://www.facebook.com/share/18hQwXpjcr/" target="_blank">📘 Facebook</a>
+        <a href="https://www.tiktok.com/@thaipacificaquaculture" target="_blank">🎵 TikTok</a>
+        <a href="#map" class="th">🗺️ แผนที่ฟาร์ม</a><a href="#map" class="en">🗺️ Farm Map</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="fcopy th">© 2568 Thai Pacific Aquaculture Co., Ltd. · ใบอนุญาตกรมประมง · ภูเก็ต ประเทศไทย</div>
+      <div class="fcopy en">© 2025 Thai Pacific Aquaculture Co., Ltd. · DoF Licensed · Phuket, Thailand</div>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/share/18hQwXpjcr/" target="_blank" class="fsoc">📘</a>
+        <a href="https://www.tiktok.com/@thaipacificaquaculture" target="_blank" class="fsoc">🎵</a>
+        <a href="tel:0818616886" class="fsoc">📞</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOAT BAR -->
+<div class="fbar">
+  <a href="tel:0818616886" class="fbtn fb-p">📞 081-861-6886</a>
+  <a href="https://line.me/ti/p/~thai-pacific" class="fbtn fb-l">💬 LINE</a>
+  <a href="https://www.facebook.com/share/18hQwXpjcr/" target="_blank" class="fbtn fb-f">📘 Facebook</a>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
